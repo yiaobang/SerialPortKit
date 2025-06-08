@@ -2,7 +2,7 @@ name: Java CI with Gradle
 
 on:
   push:
-    branches: [ "master" ]
+#    branches: [ "master" ]
     tags: # 额外添加对 tags 推送事件的监听
       - 'v*' # 匹配所有以 'v' 开头的标签，例如 v1.0.0, v2.1等
   pull_request:
