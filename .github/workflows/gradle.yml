@@ -17,26 +17,31 @@ jobs:
       contents: write
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout project
+        uses: actions/checkout@v4
 
-      - name: Set up JDK 24
+      - name: Set up JDK 24 (Zulu, with jmods)
         uses: actions/setup-java@v4
         with:
           java-version: '24'
-          distribution: 'temurin'
+          distribution: 'zulu' # Zulu 带 jmods，支持 jpackage/jlink
 
-      - name: Setup Gradle 8.14.2
+      - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4.0.0
         with:
           gradle-version: '8.14.2'
 
-      - name: Build with Gradle Wrapper
+      - name: Grant execute permission for gradlew (Linux/macOS)
+        if: runner.os != 'Windows'
+        run: chmod +x ./gradlew
+
+      - name: Build project
         run: ./gradlew build
 
-      - name: Package with jpackage
+      - name: Package app with jpackage
         run: ./gradlew jpackage
 
-      - name: Upload package artifact
+      - name: Upload packaged artifact
         uses: actions/upload-artifact@v4
         with:
           name: packaged-app-${{ matrix.os }}
@@ -49,21 +54,23 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Set up JDK 24
+
+      - name: Set up JDK 24 (Zulu)
         uses: actions/setup-java@v4
         with:
           java-version: '24'
-          distribution: 'temurin'
+          distribution: 'zulu'
 
-      - name: Setup Gradle 8.14.2
+      - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4.0.0
         with:
           gradle-version: '8.14.2'
 
-      - name: Generate and submit dependency graph
+      - name: Submit dependency graph
         uses: gradle/actions/dependency-submission@v4.0.0
 
   release:
+    name: Release artifacts
     needs: build-and-package
     runs-on: ubuntu-latest
     permissions:
@@ -72,18 +79,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Download all packages
+      - name: Download packaged artifacts
         uses: actions/download-artifact@v4
         with:
           path: dist
 
-      - name: Create Release
+      - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.ref_name }}
           name: Release ${{ github.ref_name }}
           body: |
-            自动化打包并发布，包含Linux、Windows、macOS版本。
-          files: dist/**/*
+            自动化打包并发布，包含 Linux、Windows、macOS 版本。
+          files: dist/**/*  # 上传所有平台打包结果
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
