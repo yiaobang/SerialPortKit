@@ -70,7 +70,7 @@ jobs:
     permissions:
       contents: write
     # 只有当工作流是由 Git Tag 推送触发时才运行此 job
-    if: startsWith(github.ref, 'refs/tags/')
+#    if: startsWith(github.ref, 'refs/tags/')
 
     steps:
       - uses: actions/checkout@v4
