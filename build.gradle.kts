@@ -1,6 +1,3 @@
-import jdk.tools.jlink.resources.jlink
-import jdk.tools.jlink.resources.plugins
-
 plugins {
     java
     application
@@ -15,9 +12,7 @@ version = "1.0.0"
 repositories {
     mavenLocal()
     mavenCentral()
-    maven {
-        url = "https://jitpack.io"
-    }
+    maven( "https://jitpack.io")
 }
 
 java {

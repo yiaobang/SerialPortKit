@@ -21,7 +21,7 @@
 
 - **Project Lombok**（MIT License）：简化 Java 代码开发。
 - **JavaFX**（GPL v2 with Classpath Exception）：用于构建现代化 Java 图形界面。
-- **Atlantafx**（Apache 2.0 License）：为 JavaFX 提供现代主题样式。
+- **Atlantafx**（MIT License）：为 JavaFX 提供现代主题样式。
 - **RXControls**（MIT License）：一个javafx的自定义组件库
 - **jSerialComm**（Apache 2.0 License）：串口通信库。
 - **Gson**（Apache 2.0 License）：用于 JSON 解析与序列化。

@@ -12,7 +12,7 @@ This project includes the following third-party libraries:
 
 3. Atlantafx
    Copyright © 2022, Mikhail Vorontsov
-   Licensed under the Apache License, Version 2.0.
+   Licensed under the MIT License.
    https://github.com/mhanberg/atlantafx
 
 4. RXControls
