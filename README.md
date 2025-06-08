@@ -11,7 +11,7 @@
 [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/yiaobang/SerialPortKit/ci.yml)](https://github.com/yiaobang/SerialPortKit/actions)
 
 <p align="center">
-一个实用的串口工具，基于 JavaFX 开发，具备基础通信、串口连接、数据转发、会话管理等功能。
+一个实用的串口工具，基于 JavaFX 开发
 </p>
 ## 第三方依赖声明
 
