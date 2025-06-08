@@ -36,6 +36,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Install ZIP Utility
+        if: runner.os == 'Windows'
         run: |
           choco install zip -y
 
