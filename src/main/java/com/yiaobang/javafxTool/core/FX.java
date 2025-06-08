@@ -19,7 +19,7 @@ public final class FX {
     /**
      * 资源文件前缀(可由用户定义)
      */
-    private static final String PREFIX = "/com/yiaobang/serialportfx/";
+    private static final String PREFIX = "/com/yiaobang/serialportkit/";
 
     public static void run(Runnable runnable) {
         if (Platform.isFxApplicationThread()) {
