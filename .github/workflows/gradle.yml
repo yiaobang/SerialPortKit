@@ -78,9 +78,9 @@ jobs:
       - name: Download packaged artifacts
         uses: actions/download-artifact@v4
         with:
-          # 下载时需要与上传的 artifact 名称保持一致
-          # 使用 `*` 来匹配所有带有版本号和操作系统的 artifact
-          name: packaged-app-${{ github.ref_name }}-*
+#          # 下载时需要与上传的 artifact 名称保持一致
+#          # 使用 `*` 来匹配所有带有版本号和操作系统的 artifact
+#          name: packaged-app-${{ github.ref_name }}-*
           path: dist
 
       - name: List dist contents
