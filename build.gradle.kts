@@ -85,8 +85,8 @@ jlink {
             "A practical serial port utility built with JavaFX, featuring basic communication, serial port linking, forwarding, session management, and more."
 
 
-        // 是否跳过创建安装程序(是否生成安装包)
-        skipInstaller = false
+        // 是否跳过创建安装程序(是否不生成安装包)
+        skipInstaller = true
 
         // --- 平台特定配置 ---
         val os = org.gradle.internal.os.OperatingSystem.current()
