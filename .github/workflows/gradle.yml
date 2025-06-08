@@ -24,7 +24,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           java-version: '24'
-          distribution: 'zulu' # Zulu 带 jmods，支持 jpackage/jlink
+          distribution: 'zulu'
 
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4.0.0
@@ -41,33 +41,17 @@ jobs:
       - name: Package app with jpackage
         run: ./gradlew jpackage
 
+      - name: Zip packaged app
+        run: |
+          cd build/jpackage
+          zip -r ../../packaged-app-${{ matrix.os }}.zip .
+          cd ../..
+
       - name: Upload packaged artifact
         uses: actions/upload-artifact@v4
         with:
           name: packaged-app-${{ matrix.os }}
-          path: build/jpackage/**
-
-  dependency-submission:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up JDK 24 (Zulu)
-        uses: actions/setup-java@v4
-        with:
-          java-version: '24'
-          distribution: 'zulu'
-
-      - name: Set up Gradle
-        uses: gradle/actions/setup-gradle@v4.0.0
-        with:
-          gradle-version: '8.14.2'
-
-      - name: Submit dependency graph
-        uses: gradle/actions/dependency-submission@v4.0.0
+          path: packaged-app-${{ matrix.os }}.zip
 
   release:
     name: Release artifacts
@@ -84,13 +68,16 @@ jobs:
         with:
           path: dist
 
+      - name: List dist contents
+        run: ls -l dist
+
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.ref_name }}
           name: Release ${{ github.ref_name }}
           body: |
-            自动化打包并发布，包含 Linux、Windows、macOS 版本。
-          files: dist/**/*  # 上传所有平台打包结果
+            自动化打包并发布，包含 Linux、Windows、macOS 平台的压缩包。
+          files: dist/**/*.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

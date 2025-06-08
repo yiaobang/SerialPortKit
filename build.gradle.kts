@@ -1,3 +1,4 @@
+
 plugins {
     java
     application
@@ -86,7 +87,7 @@ jlink {
 
 
         // 是否跳过创建安装程序(是否不生成安装包)
-        skipInstaller = true
+        skipInstaller = false
 
         // --- 平台特定配置 ---
         val os = org.gradle.internal.os.OperatingSystem.current()
