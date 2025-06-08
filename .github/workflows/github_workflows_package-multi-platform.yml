@@ -1,0 +1,118 @@
+name: Build & Release Packages (Multi-Platform)
+
+on:
+  push:
+    tags:
+      - 'v*'
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build-linux:
+    name: Build & Package on Linux
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '24'
+      - name: Grant execute permission for gradlew
+        run: chmod +x ./gradlew
+      - name: Build with Gradle
+        run: ./gradlew clean build
+      - name: Package with jpackage
+        run: ./gradlew jpackage
+      - name: Archive as zip
+        run: |
+          cd build/jpackage
+          zip -r ../SerialPortKit-linux.zip .
+      - name: Upload jpackage output
+        uses: actions/upload-artifact@v4
+        with:
+          name: SerialPortKit-linux
+          path: |
+            build/jpackage/**
+            build/SerialPortKit-linux.zip
+
+  build-windows:
+    name: Build & Package on Windows
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '24'
+      - name: Build with Gradle
+        run: .\gradlew.bat clean build
+      - name: Package with jpackage
+        run: .\gradlew.bat jpackage
+      - name: Archive as zip
+        run: |
+          cd build\jpackage
+          powershell Compress-Archive -Path * -DestinationPath ..\SerialPortKit-windows.zip
+      - name: Upload jpackage output
+        uses: actions/upload-artifact@v4
+        with:
+          name: SerialPortKit-windows
+          path: |
+            build/jpackage/**
+            build/SerialPortKit-windows.zip
+
+  build-macos:
+    name: Build & Package on macOS
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '24'
+      - name: Grant execute permission for gradlew
+        run: chmod +x ./gradlew
+      - name: Build with Gradle
+        run: ./gradlew clean build
+      - name: Package with jpackage
+        run: ./gradlew jpackage
+      - name: Archive as zip
+        run: |
+          cd build/jpackage
+          zip -r ../SerialPortKit-macos.zip .
+      - name: Upload jpackage output
+        uses: actions/upload-artifact@v4
+        with:
+          name: SerialPortKit-macos
+          path: |
+            build/jpackage/**
+            build/SerialPortKit-macos.zip
+
+  release:
+    name: Release Packages
+    needs:
+      - build-linux
+      - build-windows
+      - build-macos
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/v')
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: ./artifacts
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          draft: false
+          prerelease: false
+          files: |
+            ./artifacts/SerialPortKit-linux/**
+            ./artifacts/SerialPortKit-windows/**
+            ./artifacts/SerialPortKit-macos/**
