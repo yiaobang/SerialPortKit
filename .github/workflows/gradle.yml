@@ -35,6 +35,10 @@ jobs:
         if: runner.os != 'Windows'
         run: chmod +x ./gradlew
 
+      - name: Install ZIP Utility
+        run: |
+          choco install zip -y
+
       - name: Build project
         run: ./gradlew build
 
