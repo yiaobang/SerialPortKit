@@ -9,7 +9,7 @@
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/yiaobang/SerialPortKit)](https://github.com/yiaobang/SerialPortKit/pulls)
 [![GitHub license](https://img.shields.io/github/license/yiaobang/SerialPortKit)](https://github.com/yiaobang/SerialPortKit/blob/main/LICENSE)
 [![GitHub last commit](https://img.shields.io/github/last-commit/yiaobang/SerialPortKit)](https://github.com/yiaobang/SerialPortKit/commits)
-[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/yiaobang/SerialPortKit/ci.yml)](https://github.com/yiaobang/SerialPortKit/actions)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/yiaobang/SerialPortKit/gradle.yml)](https://github.com/yiaobang/SerialPortKit/actions)
 
 <p align="center">
 一个实用的串口工具，基于 JavaFX 开发
