@@ -28,4 +28,4 @@
 - [**commons-codec**](https://github.com/apache/commons-codec)：常用编解码工具类库。
 - [**commons-text**](https://github.com/apache/commons-text)：增强文本处理功能。
 
-各依赖库的详细许可证信息请参见本项目中的 `NOTICE` 文件或相关官方网站。感谢以上开源项目的支持！
+各依赖库的详细许可证信息请参见本项目中的 [`NOTICE`](NOTICE.txt) 文件或相关官方网站。感谢以上开源项目的支持！
