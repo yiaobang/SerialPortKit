@@ -3,6 +3,11 @@
   SerialPortKit
 </h3>
 
+<p align="center">
+<img alt="Java" src="https://img.shields.io/badge/Java-24-%23b07219?logo=openjdk">
+<img alt="platform" src="https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-blueviolet">
+</p>
+
 [![GitHub stars](https://img.shields.io/github/stars/yiaobang/SerialPortKit?style=social)](https://github.com/yiaobang/SerialPortKit/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/yiaobang/SerialPortKit?style=social)](https://github.com/yiaobang/SerialPortKit/network/members)
 [![GitHub issues](https://img.shields.io/github/issues/yiaobang/SerialPortKit)](https://github.com/yiaobang/SerialPortKit/issues)
@@ -10,6 +15,8 @@
 [![GitHub license](https://img.shields.io/github/license/yiaobang/SerialPortKit)](https://github.com/yiaobang/SerialPortKit/blob/main/LICENSE)
 [![GitHub last commit](https://img.shields.io/github/last-commit/yiaobang/SerialPortKit)](https://github.com/yiaobang/SerialPortKit/commits)
 [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/yiaobang/SerialPortKit/gradle.yml)](https://github.com/yiaobang/SerialPortKit/actions)
+
+
 
 <p align="center">
 一个实用的串口工具，基于 JavaFX 开发
