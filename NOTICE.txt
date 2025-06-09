@@ -1,17 +1,17 @@
 This project includes the following third-party libraries:
 
 1. Project Lombok
-   Copyright © The Project Lombok Authors
+   Copyright (C) 2009-2021 The Project Lombok Authors.
    Licensed under the MIT License.
    https://projectlombok.org/
 
 2. JavaFX
-   Copyright © 2008, 2025, Oracle and/or its affiliates. All rights reserved.
-   Licensed under the GPL v2 with the Classpath Exception.
+   Copyright (C) 1989, 1991 Free Software Foundation, Inc.
+   Licensed under the GPL License, Version 2.0.
    https://openjdk.org/projects/openjfx/
 
 3. Atlantafx
-   Copyright © 2022, Mikhail Vorontsov
+   Copyright (c) [2022] [mkpaz]
    Licensed under the MIT License.
    https://github.com/mhanberg/atlantafx
 
@@ -21,22 +21,22 @@ This project includes the following third-party libraries:
    https://github.com/leewyatt/rxcontrols
 
 5. jSerialComm
-   Copyright © 2015, Fazecast, Inc.
+   Copyright (C) 2012-2022 Fazecast, Inc.
    Licensed under the Apache License, Version 2.0.
    https://fazecast.github.io/jSerialComm/
 
 6. Gson
-   Copyright © 2008-2025, Google Inc.
+   Copyright © 2008 Google Inc.
    Licensed under the Apache License, Version 2.0.
    https://github.com/google/gson
 
 7. Apache Commons Codec
-   Copyright © 2002-2025, The Apache Software Foundation
+   Copyright 2002-2025 The Apache Software Foundation
    Licensed under the Apache License, Version 2.0.
    https://commons.apache.org/proper/commons-codec/
 
 8. Apache Commons Text
-   Copyright © 2017-2025, The Apache Software Foundation
+   Copyright 2014-2025 The Apache Software Foundation
    Licensed under the Apache License, Version 2.0.
    https://commons.apache.org/proper/commons-text/
 

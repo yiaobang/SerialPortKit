@@ -19,13 +19,13 @@
 
 本项目使用了如下开源第三方库，特此致谢：
 
-- **Project Lombok**（MIT License）：简化 Java 代码开发。
-- **JavaFX**（GPL v2 with Classpath Exception）：用于构建现代化 Java 图形界面。
-- **Atlantafx**（MIT License）：为 JavaFX 提供现代主题样式。
-- **RXControls**（MIT License）：一个javafx的自定义组件库
-- **jSerialComm**（Apache 2.0 License）：串口通信库。
-- **Gson**（Apache 2.0 License）：用于 JSON 解析与序列化。
-- **Apache Commons Codec**（Apache 2.0 License）：常用编解码工具类库。
-- **Apache Commons Text**（Apache 2.0 License）：增强文本处理功能。
+- [**lombok**](https://github.com/projectlombok/lombok)：简化 Java 代码开发。
+- [**javafx**](https://github.com/openjdk/jfx)：用于构建现代化 Java 图形界面。
+- [**atlantafx**](https://github.com/mkpaz/atlantafx)：为 JavaFX 提供现代主题样式。
+- [**RXControls**](https://github.com/leewyatt/rxcontrols)：一个javafx的自定义组件库
+- [**jSerialComm**](https://github.com/Fazecast/jSerialComm)：串口通信库。
+- [**gson**](https://github.com/google/gson)：用于 JSON 解析与序列化。
+- [**commons-codec**](https://github.com/apache/commons-codec)：常用编解码工具类库。
+- [**commons-text**](https://github.com/apache/commons-text)：增强文本处理功能。
 
 各依赖库的详细许可证信息请参见本项目中的 `NOTICE` 文件或相关官方网站。感谢以上开源项目的支持！
