@@ -55,7 +55,6 @@ jobs:
           # github.ref_name 会自动获取到标签名称，例如 'v1.0.0'
           zip -r ../../packaged-app-${{ github.ref_name }}-${{ matrix.os }}.zip .
           cd ../..
-
       - name: Upload packaged artifact
         uses: actions/upload-artifact@v4
         with:
@@ -87,7 +86,7 @@ jobs:
         run: ls -l dist
 
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ github.ref_name }}
           name: Release ${{ github.ref_name }}
