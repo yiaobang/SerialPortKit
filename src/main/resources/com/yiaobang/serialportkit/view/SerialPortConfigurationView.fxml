@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" prefHeight="728" prefWidth="952">
+   <children>
+      <VBox layoutX="129.0" layoutY="13.0" spacing="10.0">
+         <children>
+            <HBox>
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="29.0" prefWidth="50.0" text="串口号" />
+                  <ComboBox fx:id="serialPortNamePicker" prefHeight="35.0" prefWidth="167.0" />
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label prefHeight="29.0" prefWidth="50.0" text="波特率" />
+                  <ComboBox fx:id="baudRatePicker" prefHeight="35.0" prefWidth="167.0" />
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label prefHeight="29.0" prefWidth="50.0" text="数据位" />
+                  <ComboBox fx:id="dataBitsPicker" prefHeight="35.0" prefWidth="167.0" />
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label prefHeight="29.0" prefWidth="50.0" text="停止位" />
+                  <ComboBox fx:id="stopBitsPicker" prefHeight="35.0" prefWidth="167.0" />
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label prefHeight="29.0" prefWidth="50.0" text="校   验" />
+                  <ComboBox fx:id="parityPicker" prefHeight="35.0" prefWidth="167.0" />
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label prefHeight="29.0" prefWidth="50.0" text="流   控" />
+                  <ComboBox fx:id="flowControlPicker" prefHeight="35.0" prefWidth="167.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Button fx:id="serialPortSwitch" layoutX="138.0" layoutY="287.0" mnemonicParsing="false" onAction="#serialPortSwitch" prefHeight="35.0" prefWidth="87.0" text="打开串口" />
+      <Button layoutX="250.0" layoutY="287.0" mnemonicParsing="false" onAction="#cleanReceive" prefHeight="35.0" prefWidth="87.0" text="清除接收" />
+      <Button layoutX="138.0" layoutY="379.0" mnemonicParsing="false" onAction="#sendData" prefHeight="35.0" prefWidth="87.0" text="发送数据" />
+      <Button layoutX="250.0" layoutY="379.0" mnemonicParsing="false" onAction="#cleanSend" prefHeight="35.0" prefWidth="87.0" text="清除发送" />
+   </children>
+</AnchorPane>

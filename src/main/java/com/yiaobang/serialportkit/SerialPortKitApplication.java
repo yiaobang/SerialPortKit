@@ -1,53 +1,49 @@
 package com.yiaobang.serialportkit;
 
-import com.yiaobang.javafxTool.theme.Theme;
-import javafx.application.Application;
-import javafx.application.Platform;
-import javafx.fxml.JavaFXBuilderFactory;
-import javafx.stage.FileChooser;
+import com.yiaobang.mvvm.AppStart;
+import com.yiaobang.mvvm.Fx;
+import com.yiaobang.serialportkit.i18n.I18nManager;
+import com.yiaobang.serialportkit.model.MainModel;
+import com.yiaobang.serialportkit.view.MainView;
+import com.yiaobang.serialportkit.viewmodel.MainViewModel;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
-import java.io.File;
+import java.util.List;
+import java.util.Locale;
 
-public class SerialPortKitApplication extends Application {
-    public static final File ROOT_FILE_PATH;
-    public static final FileChooser FILE_CHOOSER = new FileChooser();
+public class SerialPortKitApplication extends AppStart {
 
-    static {
-        //当前目录
-        ROOT_FILE_PATH = new File(System.getProperty("user.dir"));
-    }
 
-    public static JavaFXBuilderFactory JAVAFX_BUILDER_FACTORY;
     @Override
-    public void start(Stage stage) throws Exception {
-        stage.show();
+    public void start(Stage stage) {
+        stage.initStyle(StageStyle.TRANSPARENT);
+        stage.setScene(Fx.createMVVM(new MainModel(), MainViewModel::new, MainView::new).getScene());
+        stage.getIcons().add(new Image(Fx.getResourceAsStream("/com/yiaobang/serialportkit/images/appicon/app@4X.png")));
+        Fx.stageDrag(stage).show();
     }
 
     @Override
     public void init() throws Exception {
         super.init();
-        //加载主题
-        Application.setUserAgentStylesheet(Theme.CUPERTINO_LIGHT.getCss());
-        JAVAFX_BUILDER_FACTORY = new JavaFXBuilderFactory();
-        //初始化文件选择器
-        FILE_CHOOSER.setTitle("选择json文件");
-        FILE_CHOOSER.setInitialDirectory(ROOT_FILE_PATH);
-        FILE_CHOOSER.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("json文件 (*.json)", "*.json")
-        );
-    }
 
-    @Override
-    public void stop() throws Exception {
-        super.stop();
-        Platform.exit();
-        System.exit(0);
+        // 在任何界面初始化前，优先设置全局语言
+        Locale defaultLocale = Locale.getDefault();
+        List<Locale> supported = I18nManager.getSupportedLocales();
+
+        Locale initialLocale = supported.stream()
+                .filter(l -> l.equals(defaultLocale)) // 1. 找 supported 里有没有和本机完全一致的 Locale
+                .findFirst()
+                .orElseGet(() -> supported.stream()
+                        .filter(l -> l.getLanguage().equals(defaultLocale.getLanguage())) // 2. 没有完全一样的，就找有没有语言相同的
+                        .findFirst()
+                        .orElse(Locale.ENGLISH) // 3. 连语言都没有一样的，最后用英文
+                );
+        I18nManager.switchLocale(initialLocale);
     }
 
     public static void main(String[] args) {
-        System.setProperty("prism.lcdtext", "false");
-        System.setProperty("prism.allowhidpi", "false");
         launch(args);
-   }
+    }
 }
