@@ -7,10 +7,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
-<AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" prefHeight="728" prefWidth="952">
+<AnchorPane prefHeight="395.0" prefWidth="258.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <VBox layoutX="129.0" layoutY="13.0" spacing="10.0">
+      <VBox layoutX="14.0" layoutY="14.0" spacing="10.0">
          <children>
             <HBox>
                <children>
@@ -50,9 +49,9 @@
             </HBox>
          </children>
       </VBox>
-      <Button fx:id="serialPortSwitch" layoutX="138.0" layoutY="287.0" mnemonicParsing="false" onAction="#serialPortSwitch" prefHeight="35.0" prefWidth="87.0" text="打开串口" />
-      <Button layoutX="250.0" layoutY="287.0" mnemonicParsing="false" onAction="#cleanReceive" prefHeight="35.0" prefWidth="87.0" text="清除接收" />
-      <Button layoutX="138.0" layoutY="379.0" mnemonicParsing="false" onAction="#sendData" prefHeight="35.0" prefWidth="87.0" text="发送数据" />
-      <Button layoutX="250.0" layoutY="379.0" mnemonicParsing="false" onAction="#cleanSend" prefHeight="35.0" prefWidth="87.0" text="清除发送" />
+      <Button fx:id="serialPortSwitch" layoutX="23.0" layoutY="288.0" mnemonicParsing="false" onAction="#serialPortSwitch" prefHeight="35.0" prefWidth="87.0" text="打开串口" />
+      <Button layoutX="135.0" layoutY="288.0" mnemonicParsing="false" onAction="#cleanReceive" prefHeight="35.0" prefWidth="87.0" text="清除接收" />
+      <Button layoutX="23.0" layoutY="330.0" mnemonicParsing="false" onAction="#sendData" prefHeight="35.0" prefWidth="87.0" text="发送数据" />
+      <Button layoutX="135.0" layoutY="330.0" mnemonicParsing="false" onAction="#cleanSend" prefHeight="35.0" prefWidth="87.0" text="清除发送" />
    </children>
 </AnchorPane>

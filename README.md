@@ -29,7 +29,6 @@
 - [**lombok**](https://github.com/projectlombok/lombok)：简化 Java 代码开发。
 - [**javafx**](https://github.com/openjdk/jfx)：用于构建现代化 Java 图形界面。
 - [**atlantafx**](https://github.com/mkpaz/atlantafx)：为 JavaFX 提供现代主题样式。
-- [**RXControls**](https://github.com/leewyatt/rxcontrols)：一个javafx的自定义组件库
 - [**jSerialComm**](https://github.com/Fazecast/jSerialComm)：串口通信库。
 - [**gson**](https://github.com/google/gson)：用于 JSON 解析与序列化。
 - [**commons-codec**](https://github.com/apache/commons-codec)：常用编解码工具类库。

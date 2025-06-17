@@ -12,7 +12,6 @@ version = "1.0.0"
 repositories {
     mavenLocal()
     mavenCentral()
-    maven( "https://jitpack.io")
 }
 
 java {
@@ -44,7 +43,6 @@ val commonsTextVersion = "1.13.1"
 val commonsCodecVersion = "1.18.0"
 val gsonVersion = "2.13.1"
 val junitVersion = "5.13.1"
-val rxcontrolsVersion = "11.0.3"
 
 dependencies {
     implementation("org.projectlombok:lombok:$lombokVersion")
@@ -56,7 +54,6 @@ dependencies {
     implementation("org.apache.commons:commons-text:$commonsTextVersion")
     implementation("commons-codec:commons-codec:$commonsCodecVersion")
     implementation("com.google.code.gson:gson:$gsonVersion")
-    implementation("com.github.leewyatt:rxcontrols:$rxcontrolsVersion")
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 }

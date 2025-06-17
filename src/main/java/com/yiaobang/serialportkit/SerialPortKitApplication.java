@@ -9,7 +9,6 @@ import com.yiaobang.serialportkit.viewmodel.MainViewModel;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
 import java.util.List;
 import java.util.Locale;
 
