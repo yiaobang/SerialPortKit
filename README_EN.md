@@ -1,7 +1,3 @@
-<p align="center">
-🌐 Language: [中文](README.md) | [English](README_EN.md) | [日本語](README_JA.md)
-</p>
-
 <h3 align="center">
   <img src="readme/app.png" width="100" height="100" alt="Logo"/><br/>
   SerialPortKit
@@ -20,22 +16,20 @@
 [![GitHub last commit](https://img.shields.io/github/last-commit/yiaobang/SerialPortKit)](https://github.com/yiaobang/SerialPortKit/commits)
 [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/yiaobang/SerialPortKit/gradle.yml)](https://github.com/yiaobang/SerialPortKit/actions)
 
-
-
 <p align="center">
-一个实用的串口工具，基于 JavaFX 开发
+A practical serial port tool built with JavaFX
 </p>
 
-## 第三方依赖声明
+## Third-party Dependencies
 
-本项目使用了如下开源第三方库，特此致谢：
+This project uses the following open-source libraries. Thanks to the contributors:
 
-- [**lombok**](https://github.com/projectlombok/lombok)：简化 Java 代码开发。
-- [**javafx**](https://github.com/openjdk/jfx)：用于构建现代化 Java 图形界面。
-- [**atlantafx**](https://github.com/mkpaz/atlantafx)：为 JavaFX 提供现代主题样式。
-- [**jSerialComm**](https://github.com/Fazecast/jSerialComm)：串口通信库。
-- [**gson**](https://github.com/google/gson)：用于 JSON 解析与序列化。
-- [**commons-codec**](https://github.com/apache/commons-codec)：常用编解码工具类库。
-- [**commons-text**](https://github.com/apache/commons-text)：增强文本处理功能。
+- [**lombok**](https://github.com/projectlombok/lombok): Simplifies Java code development.
+- [**javafx**](https://github.com/openjdk/jfx): For building modern Java UIs.
+- [**atlantafx**](https://github.com/mkpaz/atlantafx): Provides modern themes for JavaFX.
+- [**jSerialComm**](https://github.com/Fazecast/jSerialComm): A serial communication library.
+- [**gson**](https://github.com/google/gson): For JSON parsing and serialization.
+- [**commons-codec**](https://github.com/apache/commons-codec): Common encoding and decoding tools.
+- [**commons-text**](https://github.com/apache/commons-text): Enhanced text processing utilities.
 
-各依赖库的详细许可证信息请参见本项目中的 [`NOTICE`](NOTICE.txt) 文件或相关官方网站。感谢以上开源项目的支持！
+Please refer to the [`NOTICE`](NOTICE.txt) file or the respective official websites for detailed license information. We sincerely thank all the open-source contributors!
