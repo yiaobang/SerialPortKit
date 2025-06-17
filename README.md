@@ -1,6 +1,4 @@
-<p align="center">
-🌐 Language: [中文](README.md) | [English](README_EN.md) | [日本語](README_JA.md)
-</p>
+🌐 **Language:** [**中文**](README.md) **|** [**English**](README_EN.md) **|** [**日本語**](README_JA.md)
 
 <h3 align="center">
   <img src="readme/app.png" width="100" height="100" alt="Logo"/><br/>
